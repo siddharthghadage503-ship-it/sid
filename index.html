@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>For Sanskruti ❤️</title>
+
+<style>
+
+body{
+margin:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+font-family:Arial;
+text-align:center;
+color:white;
+overflow:hidden;
+background:linear-gradient(135deg,#ff4d6d,#ff758f);
+}
+
+/* typing screen */
+
+#intro{
+position:absolute;
+font-size:35px;
+font-weight:bold;
+}
+
+/* main container */
+
+.container{
+display:none;
+background:rgba(0,0,0,0.5);
+padding:40px;
+border-radius:20px;
+max-width:400px;
+box-shadow:0 0 30px #ff4d6d;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{box-shadow:0 0 20px #ff4d6d;}
+to{box-shadow:0 0 50px #ff99aa;}
+}
+
+/* photo */
+
+.photo{
+width:200px;
+border-radius:15px;
+margin-bottom:20px;
+box-shadow:0 0 20px white;
+}
+
+/* floating hearts */
+
+.heart{
+position:absolute;
+color:#ff4d6d;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);opacity:1;}
+100%{transform:translateY(-10vh);opacity:0;}
+}
+
+/* buttons */
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:30px;
+margin:10px;
+cursor:pointer;
+}
+
+#yes{background:#00ff95;}
+#no{background:#ff4d4d;position:absolute;}
+
+</style>
+</head>
+
+<body>
+
+<div id="intro"></div>
+
+<div class="container" id="main">
+
+<img src="photo.jpg" class="photo">
+
+<h1>Sanskruti ❤️</h1>
+
+<p>I promise to love you forever.</p>
+<p>You are the most special person in my life.</p>
+<p>Will you be a part of my life?</p>
+
+<h3>– Siddhesh</h3>
+
+<button id="yes" onclick="accepted()">Yes ❤️</button>
+<button id="no" onmouseover="moveButton()">No 😅</button>
+
+</div>
+
+<!-- Background Song -->
+
+<iframe width="0" height="0"
+src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&playlist=VIDEO_ID"
+allow="autoplay">
+</iframe>
+
+<script>
+
+/* typing intro */
+
+let text="Sanskruti... I have something to tell you ❤️";
+let i=0;
+
+function typing(){
+
+if(i<text.length){
+
+document.getElementById("intro").innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(typing,80);
+
+}else{
+
+setTimeout(function(){
+
+document.getElementById("intro").style.display="none";
+
+document.getElementById("main").style.display="block";
+
+},1500);
+
+}
+
+}
+
+typing();
+
+/* YES click */
+
+function accepted(){
+
+document.body.innerHTML="<h1 style='font-size:50px'>💍 Sanskruti ❤️<br>You made Siddhesh the happiest person alive!</h1>";
+
+}
+
+/* moving NO button */
+
+function moveButton(){
+
+let x=Math.random()*window.innerWidth;
+
+let y=Math.random()*window.innerHeight;
+
+let btn=document.getElementById("no");
+
+btn.style.left=x+"px";
+
+btn.style.top=y+"px";
+
+}
+
+/* floating hearts */
+
+setInterval(function(){
+
+let heart=document.createElement("div");
+
+heart.className="heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(Math.random()*25+15)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{heart.remove();},6000);
+
+},300);
+
+</script>
+
+</body>
+</html>
