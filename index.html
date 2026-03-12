@@ -19,7 +19,7 @@ overflow:hidden;
 background:linear-gradient(135deg,#ff4d6d,#ff758f);
 }
 
-/* typing screen */
+/* intro typing */
 
 #intro{
 position:absolute;
@@ -27,7 +27,7 @@ font-size:35px;
 font-weight:bold;
 }
 
-/* main container */
+/* container */
 
 .container{
 display:none;
@@ -104,10 +104,10 @@ cursor:pointer;
 
 </div>
 
-<!-- Background Song -->
+<!-- SONG -->
 
 <iframe width="0" height="0"
-src="https://www.youtube.com/embed/VIDEO_ID?autoplay=1&loop=1&playlist=VIDEO_ID"
+src="https://www.youtube.com/embed/IGti1RTS1wc?autoplay=1&loop=1&playlist=IGti1RTS1wc"
 allow="autoplay">
 </iframe>
 
@@ -123,7 +123,6 @@ function typing(){
 if(i<text.length){
 
 document.getElementById("intro").innerHTML+=text.charAt(i);
-
 i++;
 
 setTimeout(typing,80);
@@ -133,7 +132,6 @@ setTimeout(typing,80);
 setTimeout(function(){
 
 document.getElementById("intro").style.display="none";
-
 document.getElementById("main").style.display="block";
 
 },1500);
@@ -157,13 +155,11 @@ document.body.innerHTML="<h1 style='font-size:50px'>💍 Sanskruti ❤️<br>You
 function moveButton(){
 
 let x=Math.random()*window.innerWidth;
-
 let y=Math.random()*window.innerHeight;
 
 let btn=document.getElementById("no");
 
 btn.style.left=x+"px";
-
 btn.style.top=y+"px";
 
 }
@@ -175,11 +171,9 @@ setInterval(function(){
 let heart=document.createElement("div");
 
 heart.className="heart";
-
 heart.innerHTML="❤️";
 
 heart.style.left=Math.random()*100+"vw";
-
 heart.style.fontSize=(Math.random()*25+15)+"px";
 
 document.body.appendChild(heart);
